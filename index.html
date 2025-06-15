@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skyward - All About Sơn Tùng M-TP</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,6 +14,11 @@
       color: #0d47a1;
       overflow-x: hidden;
       position: relative;
+      .cloud-bg {
+      background-image: url('https://www.transparenttextures.com/patterns/cloudy-day.png');
+      background-size: cover;
+      animation: floatClouds 60s linear infinite;
+    }
     }
     header {
       background: #e3f2fd;
@@ -28,6 +34,15 @@
       color: #0d47a1;
       position: relative;
       z-index: 1;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #90caf9, 0 0 10px #64b5f6;
+      }
+      to {
+        text-shadow: 0 0 20px #64b5f6, 0 0 30px #42a5f5;
+      }
     }
     header p {
       font-size: 1.5rem;
@@ -57,16 +72,29 @@
     }
     .sky-icon {
       position: absolute;
-      top: -20px;
+      top: -10px;
       left: 50%;
       transform: translateX(-50%) rotate(0deg);
-      width: 120px;
+      width: 160px;
       z-index: 0;
-      animation: cloudPop 4s ease-in-out infinite alternate;
+      animation: cloudPop 3s ease-in-out infinite alternate;
+    }
+    .cloud-img {
+      position: absolute;
+      top: 40px;
+      left: -200px;
+      width: 180px;
+      opacity: 0.8;
+      z-index: 0;
+      animation: floatClouds 60s linear infinite;
+    }
+    @keyframes floatClouds {
+      from { transform: translateX(0); }
+      to { transform: translateX(120vw); }
     }
     @keyframes cloudPop {
       0% { transform: translateX(-50%) rotate(0deg) translateY(0); }
-      50% { transform: translateX(-50%) rotate(3deg) translateY(-10px); }
+      50% { transform: translateX(-50%) rotate(3deg) translateY(-8px); }
       100% { transform: translateX(-50%) rotate(-3deg) translateY(0); }
     }
     main {
@@ -130,9 +158,6 @@
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0c3c66119c.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="emojiRain"></div>
-  <img src="https://media.giphy.com/media/l0HlRmK2PzLzX1mJq/giphy.gif" class="sparkle" alt="sparkle">
-  <img src="https://i.imgur.com/I1tZ8d3.png" alt="Sky Icon" class="sky-icon">
 
   <header>
     <h1>SKYWARD</h1>
@@ -143,7 +168,7 @@
     <section>
       <h2>💙 Lời cảm ơn</h2>
       <p>Cảm ơn các “niềm kiêu hãnh” – những bạn Sky đã ủng hộ hết mình cho project mừng sinh nhật tuổi 18 của Sơn Tùng M-TP năm nay nhaaaaa 💫</p>
-      <p>Hi vọng rằng những gì mà bọn mình – team Skyward – chuẩn bị trong thời gian qua đã phần nào truyền tải được tình yêu, sự ngưỡng mộ và lòng biết ơn của Sky dành cho anh Tùng!</p>
+      <p>Hi vọng rằng những gì mà bọn mình – team Skyward – chuẩn bị trong thời gian qua đã phần nào truyền tải được tình yêu, sự ngưỡng mộ và lòng biết ơn của Sky dành cho anh Tùng! Đây là lần đầu tiên tụi mình thực hiện một project có quy mô như vậy. Chúng mình rất cảm động khi nhận được sự hưởng ứng nồng nhiệt từ mọi người…</p>
       <p>Mong rằng mỗi chặng project đều có thể mang lại niềm vui nhỏ bé cho Sky – bởi vì tụi mình làm tất cả những điều này với một trái tim tràn đầy yêu thương dành cho Sơn Tùng MTP 💙</p>
     </section>
 
@@ -160,9 +185,17 @@
 
     <section>
       <h2>☁️ Về Skyward – All About Sơn Tùng M-TP</h2>
-      <p>Tụi mình là một fanbase mới thành lập với mong muốn trở thành nơi chia sẻ thông tin, hình ảnh, khoảnh khắc đáng nhớ về Tùng, cũng như tổ chức các project support cho anh mỗi năm.</p>
+      <p>Tụi mình là một fanbase mới thành lập với mong muốn trở thành nơi chia sẻ thông tin, hình ảnh, khoảnh khắc đáng nhớ về Tùng, cũng như tổ chức các project support cho anh mỗi năm.
+
+Vì Skyward chỉ mới thành lập, nên chúng mình rất cần sự ủng hộ từ mọi người để có thể ngày càng vững mạnh và mang đến nhiều điều tuyệt vời hơn cho cộng đồng Sky.</p>
       <p>👉 Hãy follow fanpage/fanbase Skyward để không bỏ lỡ bất kỳ update thú vị nào về Sơn Tùng M-TP nhé!</p>
-      <p>Móc nghéo nha 🫶</p>
+      <ul class="space-y-3">
+      <li><a href="https://www.instagram.com/skyward4_mtp" target="_blank" class="text-blue-500 hover:underline hover-zoom">📸 Instagram: @skyward4_mtp</a></li>
+      <li><a href="https://www.tiktok.com/@skyward4_mtp" target="_blank" class="text-blue-500 hover:underline hover-zoom">📱 TikTok: @skyward4_mtp</a></li>
+      <li><a href="https://www.facebook.com/skyward4_mtp" target="_blank" class="text-blue-500 hover:underline hover-zoom">📘 Facebook Page: SKYWARD</a></li>
+    </ul>
+      <p>Chúng mình hứa sẽ luôn nỗ lực để xứng đáng với niềm tin và tình yêu của các bạn 💖 </p>
+      <p>Móc ngoéo nha 🫶</p>
     </section>
   </main>
 
@@ -185,4 +218,3 @@
   </script>
 </body>
 </html>
-
