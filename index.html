@@ -42,12 +42,48 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
     }
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 48px;
+      height: 48px;
+      z-index: 50;
+      cursor: pointer;
+      animation: floatIcon 3s ease-in-out infinite, sparkle 2s infinite;
+    }
+    #videoModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    #videoModal iframe {
+      width: 80vw;
+      height: 45vw;
+      max-width: 800px;
+      max-height: 450px;
+    }
   </style>
 </head>
 <body class="cloud-bg bg-blue-50 text-gray-800">
   <!-- Floating Icons -->
   <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="nốt nhạc" class="icon-float w-10 left-6 top-10 twinkle">
   <img src="https://cdn-icons-png.flaticon.com/512/2933/2933895.png" alt="đàn guitar" class="icon-float w-10 right-6 top-20 twinkle">
+
+  <!-- Music Trigger Button -->
+  <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" class="music-btn" onclick="document.getElementById('videoModal').style.display='flex'" alt="Phát nhạc">
+
+  <!-- MV Modal -->
+  <div id="videoModal" onclick="this.style.display='none'">
+    <iframe src="https://www.youtube.com/embed/3s1rvMFUweQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
 
   <!-- Background Music -->
   <audio autoplay loop>
