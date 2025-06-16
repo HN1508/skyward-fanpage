@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skyward - All About Sơn Tùng M-TP</title>
+  <meta name="description" content="Fanpage Skyward – Dự án sinh nhật tuổi 18 dành cho Sơn Tùng M-TP, cùng những hoạt động đặc biệt từ cộng đồng Sky.">
+  <meta property="og:title" content="Skyward - All About Sơn Tùng M-TP">
+  <meta property="og:description" content="Cùng Skyward mừng sinh nhật tuổi 18 của Sơn Tùng M-TP với dự án LED, gift và những khoảnh khắc không thể nào quên!">
+  <meta property="og:image" content="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg">
+  <meta property="og:url" content="https://hn1508.github.io/skyward-fanpage/">
+  <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     :root {
       --skyward-1: #5982CE;
@@ -29,12 +34,13 @@
       overflow: hidden;
     }
     header h1 {
-      font-size: 4.2rem;
+      font-size: clamp(3rem, 8vw, 6rem);
       margin: 0;
       color: var(--skyward-3);
       position: relative;
       z-index: 1;
       animation: glow 1.5s ease-in-out infinite alternate;
+      white-space: nowrap;
     }
     @keyframes glow {
       from {
@@ -70,6 +76,18 @@
       0% { transform: translateY(-10%); opacity: 1; }
       100% { transform: translateY(110vh); opacity: 0; }
     }
+    .circle-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 6px rgba(89,130,206,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .circle-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(89,130,206,0.8);
+    }
     .music-toggle {
       position: fixed;
       top: 10px;
@@ -85,18 +103,18 @@
   </style>
 </head>
 <body>
-  <button class="music-toggle" onclick="toggleMusic()">🎵</button>
+  <button class="music-toggle" onclick="toggleMusic()" title="Bật/Tắt nhạc nền">🎵</button>
   <audio id="bg-music" autoplay loop>
     <source src="https://cdn.jsdelivr.net/gh/HN1508/skyward-fanpage@main/y2mate.com%20-%20Như%20Ngày%20Hôm%20Qua.mp3" type="audio/mpeg">
   </audio>
   <div class="emojiRain"></div>
   <header>
-  <div class="flex flex-nowrap items-center justify-center gap-2 text-center">
-    <span class="text-4xl">⛅️</span>
-    <h1 class="text-5xl sm:text-6xl whitespace-nowrap inline">SKYWARD</h1>
-    <span class="text-4xl">⛅️</span>
-</div>
-  <p class="text-xl sm:text-2xl mt-2 whitespace-nowrap">✨💙Bầu trời của Sơn Tùng M-TP💙✨</p>
+    <div class="flex items-center justify-center gap-4 text-center whitespace-nowrap">
+      <span class="text-5xl sm:text-6xl">⛅️</span>
+      <h1>SKYWARD</h1>
+      <span class="text-5xl sm:text-6xl">⛅️</span>
+    </div>
+    <p class="text-xl sm:text-2xl mt-2 whitespace-nowrap">✨💙Bầu trời của Sơn Tùng M-TP💙✨</p>
   </header>
   <main class="p-6">
     <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
@@ -106,56 +124,56 @@
       <p class="mt-2">Mong rằng mỗi chặng project đều có thể mang lại niềm vui nhỏ bé cho Sky – bởi vì tụi mình làm tất cả những điều này với một trái tim tràn đầy yêu thương dành cho Sơn Tùng MTP – tấm thân nhỏ bé tuyệt vời nhất trong lòng chúng ta! 💙</p>
     </section>
     <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
-  <h2 class="text-2xl text-blue-700 mb-4">🎁 Mừng sinh nhật “tuổi 18”</h2>
-  <div style="position: relative; width: 320px; height: 320px; margin: 3rem auto;">
-    <a href="chặng1.html" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
-      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HN" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-    </a>
-    <a href="chặng2.html" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HCM" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-    </a>
-    <a href="chặng3.html" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Secret" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-    </a>
-    <a href="chặng4.html" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
-      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift SH" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-    </a>
-    <a href="chặng5.html" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
-      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift Checkin" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-    </a>
-  </div>
-</section>
+      <h2 class="text-2xl text-blue-700 mb-4">🎁 Mừng sinh nhật “tuổi 18”</h2>
+      <div style="position: relative; width: 320px; height: 320px; margin: 3rem auto;">
+        <a href="chặng1.html" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+          <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HN" class="circle-icon">
+        </a>
+        <a href="chặng2.html" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
+          <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HCM" class="circle-icon">
+        </a>
+        <a href="chặng3.html" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Secret" class="circle-icon">
+        </a>
+        <a href="chặng4.html" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+          <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift SH" class="circle-icon">
+        </a>
+        <a href="chặng5.html" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+          <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift Checkin" class="circle-icon">
+        </a>
+      </div>
+    </section>
     <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
       <h2 class="text-2xl text-blue-700 mb-4">☁️ Về Skyward – All About Sơn Tùng M-TP</h2>
       <p>Tụi mình là một fanbase mới thành lập với mong muốn trở thành nơi chia sẻ thông tin, hình ảnh, khoảnh khắc đáng nhớ về Tùng, cũng như tổ chức các project support cho anh mỗi năm.</p>
       <p class="mt-2">👉 Hãy follow fanpage/fanbase Skyward để không bỏ lỡ bất kỳ update thú vị nào về Sơn Tùng M-TP nhé!</p>
       <div class="pl-4">
-  <ul class="space-y-3">
-    <li>
-      <a href="https://www.instagram.com/skyward4_mtp" target="_blank" class="flex items-center gap-2  hover:underline hover-zoom">
-        <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/5296765_camera_instagram_instagram%20logo_icon.png" alt="Instagram" class="w-5 h-5">
-        Instagram: @skyward4_mtp
-      </a>
-    </li>
-    <li>
-      <a href="https://www.tiktok.com/@skyward4_mtp" target="_blank" class="flex items-center gap-2 hover:underline hover-zoom">
-        <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/tik-tok_3046121.png" alt="TikTok" class="w-5 h-5">
-        TikTok: @skyward4_mtp
-      </a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/skyward4_mtp" target="_blank" class="flex items-center gap-2 hover:underline hover-zoom">
-        <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/5296499_fb_facebook_facebook%20logo_icon.png" alt="Facebook" class="w-5 h-5">
-        Facebook Page: SKYWARD
-      </a>
-    </li>
-  </ul>
-</div>
+        <ul class="space-y-3">
+          <li>
+            <a href="https://www.instagram.com/skyward4_mtp" target="_blank" class="flex items-center gap-2 hover:underline hover-zoom">
+              <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/5296765_camera_instagram_instagram%20logo_icon.png" alt="Instagram" class="w-5 h-5">
+              Instagram: @skyward4_mtp
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@skyward4_mtp" target="_blank" class="flex items-center gap-2 hover:underline hover-zoom">
+              <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/tik-tok_3046121.png" alt="TikTok" class="w-5 h-5">
+              TikTok: @skyward4_mtp
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/skyward4_mtp" target="_blank" class="flex items-center gap-2 hover:underline hover-zoom">
+              <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/5296499_fb_facebook_facebook%20logo_icon.png" alt="Facebook" class="w-5 h-5">
+              Facebook Page: SKYWARD
+            </a>
+          </li>
+        </ul>
+      </div>
       <p class="mt-4">Chúng mình hứa sẽ luôn nỗ lực để xứng đáng với niềm tin và tình yêu của các bạn 💖</p>
     </section>
   </main>
   <footer class="bg-blue-100 text-center p-4 border-t-4 border-dotted border-blue-300 text-blue-900">
-   💙 From Skyward With Love 💙<br>
+    💙 From Skyward With Love 💙<br>
     Cùng nhau tiếp tục viết nên thanh xuân mang tên Sơn Tùng M-TP nhé 🌟🎶
   </footer>
   <script>
@@ -167,16 +185,17 @@
         audio.pause();
       }
     }
+
     const emojiList = ['💙','✨','🎶','☁️', '🎤'];
     setInterval(() => {
       const emoji = document.createElement('div');
       emoji.classList.add('emoji');
       emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
       emoji.style.left = Math.random() * 100 + 'vw';
-      emoji.style.animationDuration = 3 + Math.random() * 3 + 's';
+      emoji.style.animationDuration = 4 + Math.random() * 4 + 's';
       document.querySelector('.emojiRain').appendChild(emoji);
-      setTimeout(() => emoji.remove(), 6000);
-    }, 300);
+      setTimeout(() => emoji.remove(), 8000);
+    }, 500);
   </script>
 </body>
 </html>
