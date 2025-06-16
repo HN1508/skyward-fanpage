@@ -7,42 +7,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    :root {
+      --skyward-1: #7E9CC2;
+      --skyward-2: #5982CE;
+      --skyward-3: #3564B7;
+    }
     body {
       margin: 0;
       font-family: 'Pacifico', cursive;
-      background: linear-gradient(to bottom right, #bbdefb, #e3f2fd);
-      color: #0d47a1;
+      background: linear-gradient(to bottom right, var(--skyward-1), #EFF6FF);
+      color: var(--skyward-3);
       overflow-x: hidden;
       position: relative;
     }
     header {
-      background: #e3f2fd;
+      background: #EFF6FF;
       padding: 3rem 1rem;
       text-align: center;
       position: relative;
-      border-bottom: 6px dashed #90caf9;
+      border-bottom: 6px dashed var(--skyward-1);
       overflow: hidden;
     }
     header h1 {
       font-size: 4.2rem;
       margin: 0;
-      color: #0d47a1;
+      color: var(--skyward-3);
       position: relative;
       z-index: 1;
       animation: glow 1.5s ease-in-out infinite alternate;
     }
     @keyframes glow {
       from {
-        text-shadow: 0 0 5px #90caf9, 0 0 10px #64b5f6;
+        text-shadow: 0 0 5px var(--skyward-1), 0 0 10px var(--skyward-2);
       }
       to {
-        text-shadow: 0 0 20px #64b5f6, 0 0 30px #42a5f5;
+        text-shadow: 0 0 20px var(--skyward-2), 0 0 30px var(--skyward-3);
       }
     }
     header p {
       font-size: 1.5rem;
       margin-top: 0.5rem;
-      color: #1565c0;
+      color: var(--skyward-2);
       position: relative;
       z-index: 1;
     }
@@ -65,93 +70,12 @@
       0% { transform: translateY(-10%); opacity: 1; }
       100% { transform: translateY(110vh); opacity: 0; }
     }
-    .sky-icon {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%) rotate(0deg);
-      width: 160px;
-      z-index: 0;
-      animation: cloudPop 3s ease-in-out infinite alternate;
-    }
-    .cloud-img {
-      position: absolute;
-      top: 40px;
-      left: -200px;
-      width: 180px;
-      opacity: 0.8;
-      z-index: 0;
-      animation: floatClouds 60s linear infinite;
-    }
-    @keyframes floatClouds {
-      from { transform: translateX(0); }
-      to { transform: translateX(120vw); }
-    }
-    @keyframes cloudPop {
-      0% { transform: translateX(-50%) rotate(0deg) translateY(0); }
-      50% { transform: translateX(-50%) rotate(3deg) translateY(-8px); }
-      100% { transform: translateX(-50%) rotate(-3deg) translateY(0); }
-    }
-    main {
-      padding: 3rem 2rem;
-      z-index: 1;
-      position: relative;
-    }
-    section {
-      margin-bottom: 3rem;
-      background: #ffffffee;
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-    h2 {
-      font-size: 2rem;
-      color: #1976d2;
-      margin-bottom: 1.2rem;
-    }
-    .project-list ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .project-list li {
-      padding: 1rem 1.2rem;
-      background: #bbdefb;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: all 0.2s ease-in-out;
-    }
-    .project-list li:hover {
-      transform: translateY(-4px);
-      background: #90caf9;
-    }
-    .project-list a {
-      text-decoration: none;
-      color: #0d47a1;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    footer {
-      background: #bbdefb;
-      padding: 2rem;
-      text-align: center;
-      font-size: 1.1rem;
-      color: #0d47a1;
-      border-top: 4px dotted #90caf9;
-    }
-    .sparkle {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 100px;
-      z-index: 1000;
-    }
     .music-toggle {
       position: fixed;
       top: 10px;
       right: 10px;
       background: #ffffffcc;
-      border: 2px solid #90caf9;
+      border: 2px solid var(--skyward-1);
       border-radius: 50%;
       padding: 0.5rem;
       font-size: 1.5rem;
@@ -163,40 +87,44 @@
 <body>
   <button class="music-toggle" onclick="toggleMusic()">🎵</button>
   <audio id="bg-music" autoplay loop>
-    <source src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/y2mate.com%20-%20Như%20Ngày%20Hôm%20Qua.mp3" type="audio/mpeg">
+    <source src="https://cdn.jsdelivr.net/gh/HN1508/skyward-fanpage@main/y2mate.com%20-%20Như%20Ngày%20Hôm%20Qua.mp3" type="audio/mpeg">
   </audio>
-
   <div class="emojiRain"></div>
-  
-
   <header>
-    <h1>☁ SKYWARD ☁</h1>
-    <p>From Skyward With Love 💙</p>
+    <h1>⛅️ SKYWARD ⛅️</h1>
+    <p>💙 Bầu trời của Sơn Tùng M-TP 💙 </p>
   </header>
-
-  <main>
-    <section>
-      <h2>💙 Lời cảm ơn</h2>
+  <main class="p-6">
+    <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
+      <h2 class="text-2xl text-blue-700 mb-4">💙 Lời cảm ơn</h2>
       <p>Cảm ơn các “niềm kiêu hãnh” – những bạn Sky đã ủng hộ hết mình cho project mừng sinh nhật tuổi 18 của Sơn Tùng M-TP năm nay nhaaaaa 💫</p>
-      <p>Hi vọng rằng những gì mà bọn mình – team Skyward – chuẩn bị trong thời gian qua đã phần nào truyền tải được tình yêu, sự ngưỡng mộ và lòng biết ơn của Sky dành cho Tùng! Đây là lần đầu tiên tụi mình thực hiện một project có quy mô như vậy. Chúng mình rất cảm động khi nhận được sự hưởng ứng nồng nhiệt từ mọi người…</p>
-      <p>Mong rằng mỗi chặng project đều có thể mang lại niềm vui nhỏ bé cho Sky – bởi vì tụi mình làm tất cả những điều này với một trái tim tràn đầy yêu thương dành cho Sơn Tùng MTP – tấm thân nhỏ bé tuyệt vời nhất trong lòng chúng ta! 💙</p>
+      <p class="mt-2">Hi vọng rằng những gì mà bọn mình – team Skyward – chuẩn bị trong thời gian qua đã phần nào truyền tải được tình yêu, sự ngưỡng mộ và lòng biết ơn của Sky dành cho Tùng! Đây là lần đầu tiên tụi mình thực hiện một project có quy mô như vậy. Chúng mình rất cảm động khi nhận được sự hưởng ứng nồng nhiệt từ mọi người…</p>
+      <p class="mt-2">Mong rằng mỗi chặng project đều có thể mang lại niềm vui nhỏ bé cho Sky – bởi vì tụi mình làm tất cả những điều này với một trái tim tràn đầy yêu thương dành cho Sơn Tùng MTP – tấm thân nhỏ bé tuyệt vời nhất trong lòng chúng ta! 💙</p>
     </section>
-
-    <section class="project-list">
-      <h2>🎁 Project mừng sinh nhật “tuổi 18” gồm:</h2>
-      <ul>
-        <li><a href="chặng1.html">🔹 Chặng 1</a></li>
-        <li><a href="chặng2.html">🔹 Chặng 2</a></li>
-        <li><a href="chặng3.html">🔹 Chặng 3</a></li>
-        <li><a href="chặng4.html">🔹 Chặng 4</a></li>
-        <li><a href="chặng5.html">🔹 Chặng 5</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>☁️ Về Skyward – All About Sơn Tùng M-TP</h2>
+    <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
+  <h2 class="text-2xl text-blue-700 mb-4">🎁 Mừng sinh nhật “tuổi 18”</h2>
+  <div style="position: relative; width: 320px; height: 320px; margin: 3rem auto;">
+    <a href="chặng1.html" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%);">
+      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HN" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+    </a>
+    <a href="chặng2.html" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
+      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="LED HCM" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+    </a>
+    <a href="chặng3.html" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Secret" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+    </a>
+    <a href="chặng4.html" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift SH" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+    </a>
+    <a href="chặng5.html" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);">
+      <img src="https://raw.githubusercontent.com/HN1508/skyward-fanpage/main/anh-son-tung-mtp-6.jpg" alt="Gift Checkin" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+    </a>
+  </div>
+</section>
+    <section class="bg-white bg-opacity-90 rounded-3xl p-6 shadow-xl mb-10">
+      <h2 class="text-2xl text-blue-700 mb-4">☁️ Về Skyward – All About Sơn Tùng M-TP</h2>
       <p>Tụi mình là một fanbase mới thành lập với mong muốn trở thành nơi chia sẻ thông tin, hình ảnh, khoảnh khắc đáng nhớ về Tùng, cũng như tổ chức các project support cho anh mỗi năm.</p>
-      <p>👉 Hãy follow fanpage/fanbase Skyward để không bỏ lỡ bất kỳ update thú vị nào về Sơn Tùng M-TP nhé!</p>
+      <p class="mt-2">👉 Hãy follow fanpage/fanbase Skyward để không bỏ lỡ bất kỳ update thú vị nào về Sơn Tùng M-TP nhé!</p>
       <div class="pl-4">
   <ul class="space-y-3">
     <li>
@@ -219,16 +147,13 @@
     </li>
   </ul>
 </div>
-<p>Chúng mình hứa sẽ luôn nỗ lực để xứng đáng với niềm tin và tình yêu của các bạn 💖 <p>
-      <p>Móc nghéo nha 🫶</p>
+      <p class="mt-4">Chúng mình hứa sẽ luôn nỗ lực để xứng đáng với niềm tin và tình yêu của các bạn 💖</p>
     </section>
   </main>
-
-  <footer>
-    Một lần nữa, CẢM ƠN SKY thật nhiều!<br>
+  <footer class="bg-blue-100 text-center p-4 border-t-4 border-dotted border-blue-300 text-blue-900">
+   💙 From Skyward With Love 💙<br>
     Cùng nhau tiếp tục viết nên thanh xuân mang tên Sơn Tùng M-TP nhé 🌟🎶
   </footer>
-
   <script>
     function toggleMusic() {
       const audio = document.getElementById('bg-music');
@@ -238,7 +163,6 @@
         audio.pause();
       }
     }
-
     const emojiList = ['💙','✨','🎶','☁️', '🎤'];
     setInterval(() => {
       const emoji = document.createElement('div');
